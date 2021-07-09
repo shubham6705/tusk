@@ -1,0 +1,91 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
+  <body>
+    <button class="btn" id="open">open</button>
+    <div class="popup_container" id="container">
+      <div class="popup">
+        <h1>you tube</h1>
+        <p>this is popup of youtueb!</p>
+        <button class="popup_button" id="close">close</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+
+  </body>
+</html>
+
+
+ box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  background: orange;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.btn {
+  background-color: purple;
+  color: white;
+  padding: 0.5rem;
+  border: 3px purple;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+/// css
+
+.popup_container {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: skyblue;
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup_container.active {
+  display: flex;
+}
+
+
+.popup {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2rem;
+  position: relative;
+  width: 500px;
+}
+
+.popup_button {
+  padding: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}
+////javascript file///
+const open = document.getElementById('open');
+const close = document.getElementById('close');
+const container = document.getElementById('container');
+
+open.addEventListener('click', () => {
+  container.classList.add('active')
+});
+
+
+close.addEventListener('click', () => {
+  container.classList.remove('active')
+});
